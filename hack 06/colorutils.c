@@ -17,6 +17,10 @@ int r1=r/255;
 int g1=g/255;
 int b1=b/255;
 int k=1- max(r1,g1,b1);
-
+int a;
+int k= a;
+int c=((1-r1-a)/(1-a));
+int m=((1-g1-a)/(1-a));
+int y=((1-b1-a)/(1-a));
 
 }
