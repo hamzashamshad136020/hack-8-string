@@ -37,12 +37,20 @@ int rgbToCMYK(int r, int g, int b, double *c, double *m, double *y, double *k)
 int cmykToRGB(double c, double m, double y, double k, int *r, int *g, int *b)
 {
 
-    int r1 = 255 * (1 - c) * (1 - k);
-    int g1 = 255 * (1 - m) * (1 - k);
-    int b1 = 255 * (1 - y) * (1 - k);
+    if ((c < 0 || c > 1) || (m < 0 || m > 1) || (y < 0 || y > 1) || (k < 0 || k > 1))
+    {
+        return 1;
+    }
+    else
+    {
 
+        int r1 = 255 * (1 - c) * (1 - k);
+        int g1 = 255 * (1 - m) * (1 - k);
+        int b1 = 255 * (1 - y) * (1 - k);
 
-    r=&r1;
-    g=&g1;
-    b=&b1;
+        r = &r1;
+        g = &g1;
+        b = &b1;
+        return 0;
+    }
 }
