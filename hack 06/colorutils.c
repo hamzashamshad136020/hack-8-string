@@ -1,4 +1,12 @@
 #include <colorutils.h>
+#include <stdio.h>
+
+
+enum errors{
+
+    noerror,
+    error,
+};
 
 int max(int x, int y, int z)
 {
@@ -12,7 +20,7 @@ int rgbToCMYK(int r, int g, int b, double *c, double *m, double *y, double *k)
 
     if ((r < 0 || r > 255) || (g < 0 || g > 255) || (b < 0 || b > 255))
     {
-        return 1;
+        return error;
     }
 
     else
@@ -30,7 +38,7 @@ int rgbToCMYK(int r, int g, int b, double *c, double *m, double *y, double *k)
         *y = y1;
         *k = k1;
 
-        return 0;
+        return noerror;
     }
 }
 
@@ -39,7 +47,7 @@ int cmykToRGB(double c, double m, double y, double k, int *r, int *g, int *b)
 
     if ((c < 0 || c > 1) || (m < 0 || m > 1) || (y < 0 || y > 1) || (k < 0 || k > 1))
     {
-        return 1;
+        return error;
     }
     else
     {
@@ -51,6 +59,6 @@ int cmykToRGB(double c, double m, double y, double k, int *r, int *g, int *b)
         *r = r1;
         *g = g1;
         *b = b1;
-        return 0;
+        return noerror;
     }
 }
