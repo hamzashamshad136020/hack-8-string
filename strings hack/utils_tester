@@ -20,3 +20,32 @@ int main() {
 
     return 0;
 }
+
+
+
+
+
+
+
+
+
+
+const char *inputString = "Hello, World!";
+    char oldChar = 'l';
+    char newChar = 'z';
+
+    
+    const char *expectedResult = "Hezzo, Worzd!";
+
+   
+    char *result = replaceCharCopy(inputString, oldChar, newChar);
+
+   
+    if (strcmp(result, expectedResult) == 0) {
+        printf("Test Passed! Result: %s\n", result);
+    } else {
+        printf("Test Failed! Result: %s\n", result);
+    }
+
+
+    return 0;
