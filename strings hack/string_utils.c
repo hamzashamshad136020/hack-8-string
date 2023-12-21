@@ -6,13 +6,13 @@ void replaceChar(char *s, char oldChar, char newChar)
 {
     while (*s != '\0')
     {
-        if (s = oldChar)
+        if (s ==oldChar)
         {
             *s = newChar;
         }
         s++;
     }
-    return s;
+    
 }
 
 char *replaceCharCopy(const char *s, char oldChar, char newChar)
@@ -36,12 +36,13 @@ char *replaceCharCopy(const char *s, char oldChar, char newChar)
 
 void removeChar(char *s, char c)
 {
-    int lenght = strlen[s];
+    int i=0;
+    int lenght = strlen(s);
     while (s[i] != '\0')
     {
         if (s[i] == c)
         {
-            s[i] = s[i + 1]
+            s[i] = s[i + 1];
         }
 
         i++;
@@ -60,7 +61,7 @@ char *removeCharCopy(const char *s, char c)
         if (*s != c)
         {
             *newcopy = *s;
-            new copy++;
+            newcopy++;
             s++;
         }
 

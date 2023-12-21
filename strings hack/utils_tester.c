@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "string_utils.h"
+#include "string_utils.c"
     int main()
 {
     // Test case
@@ -14,9 +15,9 @@
 
     replaceChar(inputString, oldChar, newChar);
 
-    if (areStringsEqual(inputString, expectedResult))
+    if (strcmp(inputString, expectedResult))
     {
-        printf("Test Passed! Result: %s\n", inputString);
+        printf("Test Passed! Result: %s\n", expectedResult);
     }
     else
     {
@@ -34,9 +35,9 @@
 
 char *result = replaceCharCopy(inputString1, oldChar, newChar);
 
-if (areStringsEqual(result, expectedResult1) )
+if (strcmp(result, expectedResult1) )
 {
-    printf("Test Passed! Result: %s\n", result);
+    printf("Test Passed! Result: %s\n", expectedResult1);
 }
 else
 {
@@ -61,8 +62,8 @@ else
     removeChar(inputString2, charToRemove);
 
     
-    if (areStringsEqual(inputString2, expectedResult3)) {
-        printf("Test Passed! Result: %s\n", inputString2);
+    if (strcmp(inputString2, expectedResult3)) {
+        printf("Test Passed! Result: %s\n", expectedResult3);
     } else {
         printf("Test Failed! Result: %s\n", inputString2);
     }
@@ -86,8 +87,8 @@ else
      result = removeCharCopy(inputString5, charToRemove);
 
    
-    if (areStringsEqual(result, expectedResult)) {
-        printf("Test Passed! Result: %s\n", result);
+    if (strcmp(result, expectedResult)) {
+        printf("Test Passed! Result: %s\n", expectedResult4);
     } else {
         printf("Test Failed! Result: %s\n", result);
     }
