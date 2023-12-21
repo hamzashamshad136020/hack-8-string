@@ -1,0 +1,22 @@
+int main()
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+int main() {
+    // Test case
+    char inputString[] = "Hello, World!";
+    char oldChar = 'l';
+    char newChar = 'z';
+
+    char expectedResult[] = "Hezzo, Worzd!";
+
+    replaceChar(inputString, oldChar, newChar);
+
+    if (areStringsEqual(inputString, expectedResult)) {
+        printf("Test Passed! Result: %s\n", inputString);
+    } else {
+        printf("Test Failed! Result: %s\n", inputString);
+    }
+
+    return 0;
+}

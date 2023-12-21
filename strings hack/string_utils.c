@@ -45,28 +45,25 @@ void removeChar(char *s, char c)
 
         i++;
     }
+}
 
-    char *removeCharCopy(const char *s, char c)
+char *removeCharCopy(const char *s, char c)
+{
+    int lenght = strlen(s);
+
+    char *newcopy = (char *)malloc(lenght);
+
+    for (int i = 0; i < lenght; i++)
     {
-        int lenght = strlen(s);
-   
-      char *newcopy = (char *)malloc(lenght);
-
-
-      for (int i = 0; i < lenght; i++)
-      {
         if (*s != c)
         {
-*newcopy=*s;
-new copy++;
-s++;
-      }
-      
-      
-s++;
+            *newcopy = *s;
+            new copy++;
+            s++;
+        }
 
-
+        s++;
     }
-newcopy[lenght+1]='\0';
+    newcopy[lenght + 1] = '\0';
+}
 
-    }
