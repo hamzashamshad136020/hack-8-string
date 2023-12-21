@@ -2,7 +2,8 @@ int main()
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-int main() {
+    int main()
+{
     // Test case
     char inputString[] = "Hello, World!";
     char oldChar = 'l';
@@ -12,13 +13,33 @@ int main() {
 
     replaceChar(inputString, oldChar, newChar);
 
-    if (areStringsEqual(inputString, expectedResult)) {
+    if (areStringsEqual(inputString, expectedResult))
+    {
         printf("Test Passed! Result: %s\n", inputString);
-    } else {
+    }
+    else
+    {
         printf("Test Failed! Result: %s\n", inputString);
     }
 
-    return 0;
+    
+
+
+const char *inputString = "Hello, World!";
+char oldChar = 'l';
+char newChar = 'z';
+
+const char *expectedResult = "Hezzo, Worzd!";
+
+char *result = replaceCharCopy(inputString, oldChar, newChar);
+
+if (areStringsEqual(result, expectedResult) )
+{
+    printf("Test Passed! Result: %s\n", result);
+}
+else
+{
+    printf("Test Failed! Result: %s\n", result);
 }
 
 
@@ -29,23 +50,18 @@ int main() {
 
 
 
+ char inputString[] = "Hello, World!";
+    char charToRemove = 'l';
 
-const char *inputString = "Hello, World!";
-    char oldChar = 'l';
-    char newChar = 'z';
+   
+    const char *expectedResult = "Heo, Word!";
+
+   
+    removeChar(inputString, charToRemove);
 
     
-    const char *expectedResult = "Hezzo, Worzd!";
-
-   
-    char *result = replaceCharCopy(inputString, oldChar, newChar);
-
-   
-    if (strcmp(result, expectedResult) == 0) {
-        printf("Test Passed! Result: %s\n", result);
+    if (areStringsEqual(inputString, expectedResult)) {
+        printf("Test Passed! Result: %s\n", inputString);
     } else {
-        printf("Test Failed! Result: %s\n", result);
+        printf("Test Failed! Result: %s\n", inputString);
     }
-
-
-    return 0;
